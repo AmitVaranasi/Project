@@ -11,6 +11,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Laundry management system</title>
   </head>
+  <style>
+    /*
+  flip card
+  */
+  .card-flip > div {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card-flip:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+    
+  .card-flip:hover .card-back {
+    transform: rotateY(0deg);
+  }
+    </style>
   <body> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -80,10 +112,10 @@
             <img src="./cover-image_1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" data-interval="2000">
-            <img src="./cover-image_1.png" class="d-block w-100" alt="...">
+            <img src="./img3.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./cover-image_1.png" class="d-block w-100" alt="...">
+            <img src="./Why-Hire-Laundry-Service.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
@@ -282,6 +314,141 @@
 
         </div>
 
+      </div>
+      <div style="padding:50px;">
+        <h1>WHY US? </h1>
+      <br>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                  <div class="card-front text-white bg-dark">
+                    <div>
+                        <div class="why-us-img"><img width="75px" height="75px" alt="persionalized-experience" title="persionalized-experience" src="https://www.laundrokart.com/themes/default/laundry/images/personalized-experience.png"></div>
+                        <div class="why-us-title">Professional or Expert care</div>
+                    </div>
+                </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                          <div>
+                            We have professionals and experts who are trained to handle your clothes in the best manner.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 my-6">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-warning">
+                        <div class="card-body">
+                          <div class="front">
+                            <div>
+                                <div class="why-us-img"><img width="75px" height="75px" alt="Affordable Pricing" title="Affordable Pricing" src="https://www.laundrokart.com/themes/default/laundry/images/affordable-pricing.png"></div>
+                                <div class="why-us-title">Hygenic</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-back bg-dark text-white">
+                        <div class="card-body">
+                          <div class="back">
+                            <div>
+                                Your clothes are hygenically washed so they are germ free and clean.Your Hygine <br>is our top Priority since keeping up good Health is crucial part of our Life.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-primary">
+                        <div class="card-body">
+                          <div class="front">
+                            <div>
+                                <div class="why-us-img"><img width="75px" height="75px" alt="laundry service in bangalore" title="laundry service in bangalore" src="https://www.laundrokart.com/themes/default/laundry/images/pickup.png"></div>
+                                <div class="why-us-title">Pickup and delivery</div>
+                            </div>
+                        </div></div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body text-primary">
+                          <div class="back">
+                            <div>
+                                Hassle free pick-up and delivery as per your convenience and preference.At present this facility is available to only few cities.Sorry for the inconvenience.
+                            </div>
+                        </div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 my-3">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-dark">
+                        <div class="card-body">
+                          <div class="front">
+                            <div>
+                                <div class="why-us-img"><img alt="laundry service in bangalore" title="laundry service in bangalore" width="75px" height="75px" src="https://www.laundrokart.com/themes/default/laundry/images/money-saving-packages.png"></div>
+                                <div class="why-us-title">Eco-friendly</div>
+                            </div>
+                        </div></div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                          <div class="back">
+                            <div>
+                                As you know we are indebted to mother nature We use eco-friendly bags that are re-usable and pollution free.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 my-3">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-danger">
+                        <div class="card-body">
+                          <div class="front">
+                            <div>
+                                <div class="why-us-img"><img width="75px" height="75px" alt="laundry service in bangalore" title="laundry service in bangalore" src="https://www.laundrokart.com/themes/default/laundry/images/quality.png"></div>
+                                <div class="why-us-title">Best affordable rates</div>
+                            </div>
+                        </div></div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                          <div class="back">
+                            <div>
+                                We offer best affordable rates for Dry-cleaning and Laundry service. To help you save big, you can choose from our various packages.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 my-3">
+                <div class="card card-flip h-100">
+                    <div class="card-front text-white bg-success">
+                        <div class="card-body">
+                          <div class="front">
+                            <div>
+                                <div class="why-us-img"><img width="75px" height="75px" alt="laundry service in bangalore" title="laundry service in bangalore" src="https://www.laundrokart.com/themes/default/laundry/images/earn-referral-credits.png"></div>
+                                <div class="why-us-title">Convenient</div>
+                            </div>
+                        </div></div>
+                    </div>
+                    <div class="card-back bg-white">
+                        <div class="card-body">
+                          <div class="back">
+                            <div>
+                              Just book an Online Laundry or Dry-Cleaning service or drop it yourself at your nearest LaundroKart store. Choose whatever time is convenient for you and we will do the rest.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
       </div>
     </body>
 </html>
