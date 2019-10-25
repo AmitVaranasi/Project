@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <title>check out</title>
+</head>
+<body>
+    <script>
+    function func(val){
+        if (val == "Regular"){
+            document.getElementById("ordertype").value = "Regular";
+        }
+        else{
+            document.getElementById("ordertype").value = "Express";
+        }
+    }
+    function service(val){
+        document.getElementById("service").value += val+" ";
+    }
+    function pickup(){
+       var order =  document.getElementById("ordertype").value;
+       var service =  document.getElementById("service").value;
+       var date = document.getElementById("datetime").value ;
+       if(order !== ""&&service!==""&&date!==""){
+       
+         //alert("this is a test");
+         document.getElementById("ordertype").value = "";
+         document.getElementById("service").value = "";
+         document.getElementById("datetime").value  = "";
+         $('#exampleModalLong').modal('show')
+       }
+       else{
+         alert("please enter all the values");
+       }
+
+    }
+    function handler(e){
+  document.getElementById("datetime").value = e.target.value
+
+}
+    </script>
+    <div class = "row" style="padding:100px;">
+            <div class = "col-sm-6">
+                    <h3>1.Select Service type</h3>
+                    <br>
+                    
+                        <button type="button" class="btn btn-secondary" value = "Regular" onclick="func(this.value)">Regular</button>
+                        <button type="button" class="btn btn-secondary" value = "Express" onclick="func(this.value)">Express</button>
+                      
+                      <br><hr>
+                      <h3>2. Select any of this Service</h3>
+                      <br>
+                      
+                        <button type="button" class="btn btn-secondary" value = "Steam&press" onclick="service(this.value)">Steam and Press</button>
+                        <button type="button" class="btn btn-secondary" value = "wash&fold" onclick="service(this.value)">wash and fold</button>
+                        <button type="button" class="btn btn-secondary" value = "wash&press" onclick="service(this.value)">wash & press</button>
+                        <button type="button" class="btn btn-secondary" value = "DryClean" onclick="service(this.value)">Dry clean</button>        
+                      
+                      <br><hr>
+                      <h3>3. Pickup Date & Time</h3>
+                      <input type="datetime-local" name="" id="" onchange="handler(event);">
+             </div>
+             <div class="col-sm-6">
+                    <h3>Order Summary</h3>
+                    <input type="text" class = "form-control" id = "ordertype" placeholder="order type" disabled>
+                    <br><hr>
+                    <input type="text" class = "form-control" id = "service" placeholder="service" disabled>
+                    <br><hr>
+                    <input type="text" class = "form-control" id = "datetime" placeholder="time" disabled>
+                    <br><hr>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="pickup()">Confirm Pick Up</button>
+              </div>
+                    
+    </div>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle" style="padding-left:100px;margin-left: 10px;">Booking Successful</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <img src="./dribbble-success-2.gif" alt="" style="width: 466px;">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+     
+      
+      
+</body>
+</html>
