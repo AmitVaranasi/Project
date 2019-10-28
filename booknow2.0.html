@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <title>Booknow</title>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+    <style>
+        #anchor{
+            text-decoration: none;
+        }
+        span
+            {
+                font-size: 25px;
+                color:black;
+                font-weight: bolder;
+                float:center;
+
+            }
+        .child1,.child2,.child3,.child4
+            {
+            width: 100%;
+            border-radius: 5px;
+            background-color: white ;
+            text-align: center;
+            }
+        .child1:hover span,.child2:hover span,.child3:hover span,.child4:hover span{
+            background-color: rgb(21,111,184);
+            color: white;
+        }
+        .child1:hover,.child2:hover,.child3:hover,.child4:hover{
+            background-color: rgb(21,111,184);
+            color: white; 
+        }
+        .child1:active,.child2:active,.child3:active,.child4:active{
+            background-color: rgb(21,111,184);
+            color: white; 
+        }
+        /* .child1:focus{
+            background-color: rgb(21,111,184);
+            color: white;
+        } */
+        /* .child1:focus span,.child2:focus span,.child3:focus span,.child4:focus span{
+            background-color: rgb(21,111,184);
+            color: white;
+        } */
+            
+        #a{
+            border: 2px solid rgb(206,233,242) ;
+            background-color: white;
+            border-radius: 5px;
+           
+        }
+        
+        table{
+            
+            width: 100%;
+            
+        }
+        #row1{
+            width:100%;
+            max-height: 89vh;
+            overflow-y: scroll;
+        }
+        .row{
+            padding: 5px;
+        }
+        #washandfold,#washandpress,#drycleaning{
+            display:none;
+        }
+        body{
+            background-color:rgb(206,233,242) ;
+            font-family: 'Muli',sans-serif;
+        }
+        small{
+            opacity:0.5;
+        }
+        
+    </style>
+    <script>
+        function content(id){
+         var button_name = id;
+         console.log("Im button "+ button_name);
+         if(button_name==="div1")
+         {
+             document.getElementById("steam").style.display='block';
+             document.getElementById("child1").style.backgroundColor = "#"+(21).toString(16)+(111).toString(16)+(184).toString(16);;
+             document.getElementById("washandpress").style.backgroundColor = 'white';
+             document.getElementById("washandfold").style.backgroundColor = 'white';
+             document.getElementById("drycleaning").style.backgroundColor = 'white';
+             document.getElementById("washandpress").style.display='none';
+             document.getElementById("washandfold").style.display='none';
+             document.getElementById("drycleaning").style.display='none';
+         }
+         else  if( button_name==="div2")
+         {
+            document.getElementById("steam").style.display='none';
+             document.getElementById("washandpress").style.display='block';
+             document.getElementById("washandfold").style.display='none';
+             document.getElementById("drycleaning").style.display='none';
+
+         }
+         else  if( button_name==="div3")
+         {
+            document.getElementById("steam").style.display='none';
+             document.getElementById("washandpress").style.display='none';
+             document.getElementById("washandfold").style.display='block';
+             document.getElementById("drycleaning").style.display='none';
+
+         }
+         else  if( button_name==="div4")
+         {
+            document.getElementById("steam").style.display='none';
+             document.getElementById("washandpress").style.display='none';
+             document.getElementById("washandfold").style.display='none';
+             document.getElementById("drycleaning").style.display='block';
+
+         }
+         else{
+            document.getElementById("steam").style.display='block';
+             document.getElementById("washandpress").style.display='none';
+             document.getElementById("washandfold").style.display='none';
+             document.getElementById("drycleaning").style.display='none';
+             
+
+
+         }
+        }
+
+    </script>
+  </head>
+  <body>
+        <div class="container">
+                <div class="mb-auto row" >
+                    
+                        <div class="d-flex flex-column flex-nowrap justify-content-between col-md-3" style="background-color:rgb(206,233,242) ;">
+                                <div class="child1" id="div1" onclick="content(this.id)" style="height:20vh;">
+                                        <img class="abc" src="steampress1.png"style="float:left" alt="steampress">
+                                        
+                                        <span class="ab">Steam Press<span><br>
+                                        <span class="ab">(48 hrs)</span>
+                                     </div>
+                                     <div class="child2" id="div2" onclick="content(this.id)" style="height:20vh;">
+                                             
+                                             <img class="abc" src="washandpress1.png" style="float:left" alt="wash and press">
+                                             
+                                             <span class="ab">Wash & Press</span><br>
+                                             <span  class="ab">(2-3 days)</span>
+                                         
+                     
+                                     </div>
+                                     <div class="child3" id="div3" onclick="content(this.id)" style="height:20vh;">
+                                             
+                                             <img class="abc" src="washandfold1.png" style="float:left" alt="Wash and Fold">
+                                             
+                                             <span  class="ab">Wash & Fold</span><br>
+                                             <span  class="ab">(2-3 days)</span>
+                                         
+                      
+                                     </div>
+                                     <div class="child4" id="div4" onclick="content(this.id)" style="height:20vh;">
+                                             
+                                             <img class="abc" src="dry1.png" style="float:left" alt="Dry cleaning">
+                                             
+                                             <span  class="ab">Dry cleaning</span><br>
+                                             <span  class="ab">(3-4 days)</span>
+                                         
+                     
+                     
+                                     </div>
+                        
+                    </div>
+                        <div class="d-flex flex-column flex-nowrap justify-content-start col-md-9 "id="row1">
+                            <div id="steam">
+                                <div id="a">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS1</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>     
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                                    <div id="a">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <small>ITEM TYPE</small>
+                                                        </td>
+                                                        <td><small>PRICE</small></td>
+                                                    </tr>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>REGULAR GARMENTS</td>
+                                                            <td><b>&#8377</b> 7/piece</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                    </div>
+                        
+
+                      </div>
+                      
+                      <div id="washandpress">
+                            <div id="a">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS2</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>     
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                                <div id="a">
+                                        <table>
+                                                <tr>
+                                                    <td>
+                                                        <small>ITEM TYPE</small>
+                                                    </td>
+                                                    <td><small>PRICE</small></td>
+                                                </tr>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>REGULAR GARMENTS</td>
+                                                        <td><b>&#8377</b> 7/piece</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                </div>
+                    
+
+                  </div>
+                  <div id="washandfold" >
+                        <div id="a">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <small>ITEM TYPE</small>
+                                        </td>
+                                        <td><small>PRICE</small></td>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>REGULAR GARMENTS3</td>
+                                            <td><b>&#8377</b> 7/piece</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>     
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                            <div id="a">
+                                    <table>
+                                            <tr>
+                                                <td>
+                                                    <small>ITEM TYPE</small>
+                                                </td>
+                                                <td><small>PRICE</small></td>
+                                            </tr>
+                                            <tbody>
+                                                <tr>
+                                                    <td>REGULAR GARMENTS</td>
+                                                    <td><b>&#8377</b> 7/piece</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                            </div>
+                
+
+              </div>
+              <div id="drycleaning">
+                    <div id="a">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <small>ITEM TYPE</small>
+                                    </td>
+                                    <td><small>PRICE</small></td>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>REGULAR GARMENTS4</td>
+                                        <td><b>&#8377</b> 7/piece</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>     
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+                        <div id="a">
+                                <table>
+                                        <tr>
+                                            <td>
+                                                <small>ITEM TYPE</small>
+                                            </td>
+                                            <td><small>PRICE</small></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>REGULAR GARMENTS</td>
+                                                <td><b>&#8377</b> 7/piece</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                        </div>
+            
+
+          </div>
+                  
+                    </div>
+                      <div class="row" style="text-align:center ; height:10vh;background-color:rgb(206,233,242);width:100%" >
+                        
+                                <div style="width:100%;height:100%;padding-bottom: 20px;">
+                                        <input type="button" value="Book Now" style="text-align:center;color:white;font-weight:bolder;font-size:25px;background-color:rgb(21, 111, 184);width: 25% ; height:9vh; border :2px solid black; border-radius: 5px;">
+                                </div>
+                        
+                        
+                      </div>
+              </div>
+              </div>
+            
+    </body>
+</html>
